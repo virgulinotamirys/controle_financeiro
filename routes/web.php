@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::resource('tipo_movimentacoes', 'TipoMovimentacaoController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
