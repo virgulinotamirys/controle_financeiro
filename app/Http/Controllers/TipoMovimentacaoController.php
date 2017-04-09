@@ -3,80 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TipoMovimentacao;
+
 
 class TipoMovimentacaoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        //2º passo
+        //retorna todas as entidas da tabela do BD (coleção de registros)
+        $tipo_movimentacoes = TipoMovimentacao::all();  
+        // O segundo parametro aceita um array nomeado,diz que estou passando para a view que está sendo renderizada
+        // uma chamada de 'tipo_movimentacoes' que ira conter uma colecao que é armazenada na variavel $tipo_movimentacoes.
+        // Que de dentro da view posso acessar a coleção atraves da variavel 'tipo_movimentaoes'.
+        return view('tipo_movimentacoes/index', ['tipo_movimentacoes' => $tipo_movimentacoes]);  
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function destroy($id)
     {
         //

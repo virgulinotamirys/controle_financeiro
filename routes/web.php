@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 1º passo
 Route::resource('tipo_movimentacoes', 'TipoMovimentacaoController');
 Auth::routes();
 
