@@ -11,7 +11,6 @@ class TipoMovimentacaoController extends Controller
    
     public function index()
     {
-        //2º passo
         //retorna todas as entidas da tabela do BD (coleção de registros)
         $tipo_movimentacoes = TipoMovimentacao::all();  
         // O segundo parametro aceita um array nomeado,diz que estou passando para a view que está sendo renderizada
