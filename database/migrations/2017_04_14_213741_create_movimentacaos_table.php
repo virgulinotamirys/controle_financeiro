@@ -13,8 +13,12 @@ class CreateMovimentacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('movimentacaos', function (Blueprint $table) {
+        Schema::create('movimentacoes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->string('valor');
+            $table->string('data');
+            $table->string('data_registro');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateMovimentacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movimentacaos');
+        Schema::dropIfExists('movimentacoes');
     }
 }

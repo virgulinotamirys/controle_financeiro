@@ -10,5 +10,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home','HomeController@index')->middleware('auth');
     Route::resource('tipo_movimentacoes', 'TipoMovimentacaoController');
     Route::resource('status_movimentacoes', 'StatusMovimentacaoController');
-    Route::resource('movimentacao', 'MovimentacaoController');
+    Route::resource('movimentacoes', 'MovimentacaoController');
 });

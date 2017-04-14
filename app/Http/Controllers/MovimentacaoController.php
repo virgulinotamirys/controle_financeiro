@@ -3,82 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movimentacao;
 
-class MovimentacaoController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class MovimentacaoController extends Controller {
+
+    public function index() {
+        $movimentacoes = Movimentacao::all();
+        return view('movimentacoes/index', ['movimentacoes' => $movimentacoes]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function create() {
+        return view('movimentacoes/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $movimentacao = new Movimentacao();
+        $movimentacao->descricao = $request->input('descricao');
+        $movimentacao->valor = $request->input('valor');
+        $movimentacao->data = $request->input('data');
+        $movimentacao->data_registro = $request->input('data_registro');
+        $movimentacao->save();
+        return redirect()->route('movimentacoes.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show($id) {
+        $movimentacao = Movimentacao::find($id);
+        return view('movimentacoes/show', ['movimentacao' => $movimentacao]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $movimentacao = Movimentacao::find($id);
+        return view('movimentacoes/edit', ['movimentacao' => $movimentacao]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+        $movimentacao = Movimentacao::find($id);
+        $movimentacao->descricao = $request->input('descricao');
+        $movimentacao->valor = $request->input('valor');
+        $movimentacao->data = $request->input('data');
+        $movimentacao->data_registro = $request->input('data_registro');
+        $movimentacao->save();
+        return redirect()->route('movimentacoes.show', ['id' => $movimentacao->id]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+        $movimentacao = Movimentacao::find($id);
+        $movimentacao->delete();
+        return redirect()->route('movimentacoes.index');
     }
+
 }
