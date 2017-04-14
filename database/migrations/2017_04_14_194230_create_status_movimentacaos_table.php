@@ -13,8 +13,9 @@ class CreateStatusMovimentacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('status_movimentacaos', function (Blueprint $table) {
+        Schema::create('status_movimentacoes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateStatusMovimentacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_movimentacaos');
+        Schema::dropIfExists('status_movimentacoes');
     }
 }

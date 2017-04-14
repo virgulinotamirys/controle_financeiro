@@ -10,8 +10,8 @@ class StatusMovimentacaoController extends Controller
    
     public function index()
     {
-        $status_movimentacao = StatusMovimentacao::all();  
-        return view('status_movimentacao/index', ['status_movimentacao' => $status_movimentacao]);  
+        $status_movimentacoes = StatusMovimentacao::all();  
+        return view('status_movimentacoes/index', ['status_movimentacoes' => $status_movimentacoes]);  
     }
 
    
