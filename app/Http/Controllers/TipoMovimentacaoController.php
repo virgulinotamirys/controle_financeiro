@@ -30,7 +30,7 @@ class TipoMovimentacaoController extends Controller
     public function store(Request $request)
     {
         $tipo_movimentacao = new TipoMovimentacao();
-        $tipo_movimentacao->nome = $request->get('nome');
+        $tipo_movimentacao->nome = $request->input('nome');
         $tipo_movimentacao->save();
         return redirect()->route('tipo_movimentacoes.index');
     }
@@ -53,7 +53,7 @@ class TipoMovimentacaoController extends Controller
     public function update(Request $request, $id)
     {
         $tipo_movimentacao = TipoMovimentacao::find($id);
-        $tipo_movimentacao->nome = $request->get('nome');
+        $tipo_movimentacao->nome = $request->input('nome');
         $tipo_movimentacao->save();
         return redirect()->route('tipo_movimentacoes.show', ['id' => $tipo_movimentacao->id]);
     }
