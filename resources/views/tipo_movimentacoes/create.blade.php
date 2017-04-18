@@ -7,6 +7,7 @@
         <label>Nome</label>
         <input type="text" class="form-control " id="nome" name="nome"><br/>
         <button type="submit" class="btn btn-default">Salvar</button>
+        <a class="btn btn-link" href="{{ route('tipo_movimentacoes.index') }}">Cancelar</a>
     </div>
 </form>
 @endsection

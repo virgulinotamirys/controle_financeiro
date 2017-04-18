@@ -15,6 +15,7 @@
              <label>Data do registro</label>
             <input type="text" class="form-control " id="data_registro" name="data_registro" value="{{ $movimentacao->data_registro }}"><br/>
             <button type="submit" class="btn btn-default">Salvar</button>
+            <a class="btn btn-link" href="{{ route('movimentacoes.index') }}">Cancelar</a>
         </div>
     </form>
 </div>

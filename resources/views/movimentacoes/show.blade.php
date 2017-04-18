@@ -32,5 +32,6 @@
     {{ csrf_field() }}
     {{ method_field('DELETE') }}
     <button type="submit" class="btn btn-default">Excluir</button>
+     <a class="btn btn-link" href="{{ route('movimentacoes.index') }}">Cancelar</a>
 </form>
 @endsection
