@@ -9,6 +9,7 @@
             <th>Valor</th>
             <th>Data</th>
             <th>Data do registro</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
             <td>{{ $movimentacao->valor }}</td>
             <td>{{ $movimentacao->data }}</td>
             <td>{{ $movimentacao->data_registro }}</td>
+            <td><a class="btn btn-link" href="{{ route('movimentacoes.edit', ['id' => $movimentacao->id]) }}">Editar</a></td>
         </tr>
         @endforeach
 
