@@ -6,6 +6,7 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,9 @@
         <tr>
             <td>{{ $tipo_movimentacao->id }}</td>
             <td>{{ $tipo_movimentacao->nome }}</td>
+            <td><a class="btn btn-link" href="{{ route('tipo_movimentacoes.edit', ['id' => $tipo_movimentacao->id]) }}">Editar</a></td>
+            <td><a class="btn btn-link" href="{{ route('tipo_movimentacoes.update', ['id' => $tipo_movimentacao->id]) }}">Atualizar</a></td>
+            <td><a class="btn btn-link" href="{{ route('tipo_movimentacoes.destroy', ['id' => $tipo_movimentacao->id]) }}">Excluir</a></td>
         </tr>
         @endforeach
 

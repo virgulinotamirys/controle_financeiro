@@ -21,6 +21,8 @@
             <td>{{ $movimentacao->data }}</td>
             <td>{{ $movimentacao->data_registro }}</td>
             <td><a class="btn btn-link" href="{{ route('movimentacoes.edit', ['id' => $movimentacao->id]) }}">Editar</a></td>
+            <td><a class="btn btn-link" href="{{ route('movimentacoes.update', ['id' => $movimentacao->id]) }}">Atualizar</a></td>
+            <td><a class="btn btn-link" href="{{ route('movimentacoes.destroy', ['id' => $movimentacao->id]) }}">Excluir</a></td>
         </tr>
         @endforeach
 
