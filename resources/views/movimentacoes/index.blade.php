@@ -9,7 +9,7 @@
             <th>Valor</th>
             <th>Data</th>
             <th>Data do registro</th>
-            <th>Ações</th>
+            <th colspan="3">Ações</th>
         </tr>
     </thead>
     <tbody>

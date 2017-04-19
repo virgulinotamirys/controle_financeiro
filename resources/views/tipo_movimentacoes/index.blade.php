@@ -6,7 +6,7 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>Ações</th>
+            <th colspan="3">Ações</th>
         </tr>
     </thead>
     <tbody>
